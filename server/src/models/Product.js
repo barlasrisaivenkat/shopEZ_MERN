@@ -1,7 +1,7 @@
-const mongoose=require("mongoose");
+import mongoose from "mongoose";
 
-const productSchema=new mongoose.Schema({
-
+const productSchema = new mongoose.Schema(
+{
     title:{
         type:String,
         required:true
@@ -27,29 +27,48 @@ const productSchema=new mongoose.Schema({
         required:true
     },
 
-    brand:String,
+    brand:{
+        type:String
+    },
+
 
     images:[
         String
     ],
 
+
     category:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"Category"
+        ref:"Category",
+        required:true
     },
+
 
     seller:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"User"
+        ref:"User",
+        required:true
     },
 
-    averageRating:{
+
+    // Review fields
+    rating:{
+        type:Number,
+        default:0
+    },
+
+
+    numReviews:{
         type:Number,
         default:0
     }
 
-},{
+},
+{
     timestamps:true
 });
 
-module.exports=mongoose.model("Product",productSchema);
+
+const Product = mongoose.model("Product", productSchema);
+
+export default Product;
