@@ -161,7 +161,7 @@ function OrdersPage() {
 
                     {/* Review Form */}
 
-                    {order.orderStatus === "delivered" && (
+                    {order.orderStatus === "Delivered" && (
                       <div className="review-box">
 
                         {reviewData[item.product]?.submitted ? (
@@ -265,7 +265,7 @@ function OrdersPage() {
                 </div>
               )}
 
-              {order.orderStatus === "pending" && (
+              {order.orderStatus === "Order Placed" && (
                 <div className="section-footer">
                   <button
                     className="ghost-btn"
