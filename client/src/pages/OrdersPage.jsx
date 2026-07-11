@@ -70,12 +70,14 @@ function OrdersPage() {
     }
   };
 
-  const steps = [
-    "pending",
-    "processing",
-    "shipped",
-    "delivered",
-  ];
+ const steps = [
+    "Order Placed",
+    "Confirmed",
+    "Packed",
+    "Shipped",
+    "Out for Delivery",
+    "Delivered",
+];
 
   return (
     <div className="page">
