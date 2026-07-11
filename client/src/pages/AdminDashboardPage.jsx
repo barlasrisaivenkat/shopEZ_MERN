@@ -2,7 +2,15 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { authApi, categoryApi, orderApi, paymentApi, productApi } from '../services/api';
 
-const statusOptions = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
+const statusOptions = [
+  "Order Placed",
+  "Confirmed",
+  "Packed",
+  "Shipped",
+  "Out for Delivery",
+  "Delivered",
+  "Cancelled",
+];
 
 function AdminDashboardPage() {
   const [users, setUsers] = useState([]);
